@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            border: 5px solid;
+            margin: 20px;
+            padding: 10px;
+            height: 30px;
+            width: 500px;
+
+        }
+
+        .msg{
+            border:5px solid black;
+            text-align: center;
+            color: yellow;
+            font-size: 25px;
+            font-weight: bold;
+            padding: 10px;
+
+        }  
+
+        .background{
+            border: 5px solid orangered;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<div>
+
+    <div class="" id="divMain"></div>
+
+    <input type="button" value="Create block" id="block" >
+    <input type="button" value="Get Msg" id="msg" >
+    <input type="button" value="Get Color" id="color" >
+</div>
+
+<script>
+
+
+var storeBlock = document.querySelector("#block");
+var storeMsg = document.querySelector("#msg");
+var storeColor = document.querySelector("#color");
+
+
+    var blockFunction = ()=>{
+   document.querySelector("#divMain").setAttribute("class" , "container");
+   document.querySelector("#divMain").innerHTML = "";
+   console.log("blockFunction")
+
+    }
+
+ 
+    var msgfunction = ()=>{
+        blockFunction();
+         var firstclass = document.querySelector("#divMain").getAttribute("class");
+
+            firstclass = firstclass + " msg" ; // important space is mandatory while defining class(" msg")
+            
+          
+
+
+        var msg = "Hellow Every one , Welcome to Jquery API";
+        document.querySelector("#divMain").innerHTML = msg;
+        document.querySelector("#divMain").setAttribute("class" , firstclass);
+        console.log("msgfunction")
+
+        return firstclass
+    }
+    
+    
+    
+
+    var colorFunction =  ()=>{
+        blockFunction()
+        msgfunction()
+        var class1 = msgfunction()
+        var lastclass = class1 + " background";  // most important (" background")--> space before background 
+
+   document.querySelector("#divMain").setAttribute("class" , lastclass);
+   console.log("i am color button ........ clicked")
+   console.log("msgfunction")
+    }
+
+
+  storeBlock.addEventListener("click" ,blockFunction )
+  storeMsg.addEventListener("click" , msgfunction)
+  storeColor.addEventListener("click" , colorFunction )
+
+
+</script>
+
+</body>
+</html>
