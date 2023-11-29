@@ -1,0 +1,23 @@
+.container{
+    border: 5px solid;
+    margin: 20px;
+    padding: 10px;
+    height: 30px;
+    width: 500px;
+
+}
+
+.msg{
+    border:5px solid black;
+    text-align: center;
+    color: yellow;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 10px;
+
+}  
+
+.background{
+    border: 5px solid orangered;
+    background-color: black;
+}
